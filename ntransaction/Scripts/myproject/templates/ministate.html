@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ministatement</title>
+    <style>
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size:500%,500%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        table{
+            text-align: center;
+            align-items: center;
+            background-color: azure;
+            position: absolute;
+            left:50%;
+            transform: translate(-300px,0px);
+        }
+        tr{
+            width:400px;
+            background-color: azure;
+            transition: width 3s ease-in-out;
+        }
+        tr:hover{
+            background-color: bisque;
+            width:500px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Ministatement
+    </h1>
+    <table border="1">
+        <tr>
+            <th>
+                transaction id
+            </th>
+            <th>
+                first name
+            </th>
+            <th>
+                last name
+            </th>
+            <th>
+                account number
+            </th>
+            <th>
+                amount
+            </th>
+            <th>
+                date of transaction
+            </th>
+        </tr>
+        {% for i in mydata %}
+            <tr>
+                <td>
+                    {{i.id}}
+                </td>
+                <td>
+                    {{i.fname}}
+                </td>
+                <td>
+                    {{i.lname}}
+                </td>
+                <td>
+                    {{i.acc}}
+                </td>
+                <td>
+                    {{i.amt}}
+                </td>
+                <td>
+                    {{i.date}}
+                </td>
+            </tr>
+            {% endfor %}
+    </table>
+</body>
+</html>
