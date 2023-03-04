@@ -35,6 +35,16 @@ def signindata(request):
     
 def creditbutton(request):
     return render(request,'creditpage.html')
+def selfCredit(request):
+    return render(request,'selfcredit.html')
+def creditself(request):
+    n=models.Members.objects.filter(acc=accnum)
+    amount=0
+    for i in n:
+        amount=i.amt
+    m=models.Members(fname=finame,passw=passwo,lname=laname,acc=accnum,amt=amount+int(request.GET['creamt']),date=str(dt.datetime.now()))
+    m.save()
+    return HttpResponse('credited successfully')
 def creditpage(request):
     #amnt=float(amnt)+float(request.GET['creamt'])
     actnum=request.GET['actnum']
@@ -46,6 +56,8 @@ def creditpage(request):
             pw=i.passw
             fn=i.fname
             ln=i.lname
+    if(n < int(request.GET['creamt'])):
+        return HttpResponse("<h1>Not enough balance</h1>")
     m=models.Members(fname=fn,passw=pw,lname=ln,acc=actnum,amt=n+int(request.GET['creamt']),date=str(dt.datetime.now()))
     m.save()
     n=models.Members.objects.filter(acc=accnum)

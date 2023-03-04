@@ -45,12 +45,20 @@
         input:hover{
             background-color: antiquewhite;
         }
+        input[type="submit"]{
+            margin:10px;
+            font-size: large;
+        }
+        h1{
+            text-align: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
 
-    <h1 align="center">Account number :{{ acc }}</h1>
-    <h1 align="center">Hello : {{fname}}</h1>
+    <h1>Account number :{{ acc }}</h1>
+    <h1>Hello : {{fname}}</h1>
     <div>
         <form action="creditbutton">
             <!--
@@ -67,14 +75,17 @@
              </label>
              <br/>
             --> 
-             <input type="submit" value="credit"/>
-         </form><br>
+             <input type="submit" value="credit to other"/>
+         </form>
+         <form action="selfCredit">
+            <input type="submit" value="credit yourself"/>
+         </form>
          <form action="debitbutton">
              <input type="submit" value="debit"/>
-         </form><br>
+         </form>
          <form action="ministate">
              <input type="submit" value="ministatement"/>
-         </form><br>
+         </form>
          <form action="home">
              <input type="submit" value="logout"/>
          </form>

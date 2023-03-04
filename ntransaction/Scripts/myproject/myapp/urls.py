@@ -13,4 +13,6 @@ urlpatterns = [
     path('ministate',views.ministate,name='ministate'),
     path('debitbutton',views.debitbutton,name="debitbutton"),
     path('debitpage',views.debitpage,name="debitpage"),
+    path('selfCredit',views.selfCredit,name="selfCredit"),
+    path('creditself',views.creditself,name="creditself"),
 ]
