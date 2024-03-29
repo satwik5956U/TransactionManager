@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+import dj_database_url
 # Application definition
 
 INSTALLED_APPS = [
@@ -84,6 +84,7 @@ DATABASES = {
         'PASSWORD':'Satwik@2003',
     }
 }
+DATABASES['default']=dj_database_url.parse("postgres://transactionmanager_user:DFWAGeRo575JUZfBni8ux4KZgBmTMO8x@dpg-co3fdbg21fec7390nvug-a.oregon-postgres.render.com/transactionmanager")
 
 
 # Password validation
