@@ -15,5 +15,4 @@ urlpatterns = [
     path('debitpage',views.debitpage,name="debitpage"),
     path('selfCredit',views.selfCredit,name="selfCredit"),
     path('creditself',views.creditself,name="creditself"),
-    path('emotion',views.emotion,name='emotion'),
 ]

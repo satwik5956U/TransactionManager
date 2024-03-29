@@ -23,40 +23,67 @@
                 background-position: 0% 50%;
             }
         }
-        form{
-            position:absolute;
-            top:50%;
-            left:50%;
+        
+        form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
-        table{
+
+        table {
             text-align: center;
-            transform: translate(-150px,-100px);
+            width: 300px;
+            margin: 0 auto;
         }
-        .creamtcls{
-            width:100px;
-            height:15px;
+
+        h1 {
+            margin-top: 0;
+            color: #333;
+            font-size: larger;
+        }
+
+        label {
+            font-size: larger;
+            color: #333;
+        }
+
+        .creamtcls {
+            width: 100px;
+            height: 15px;
             background: black;
             transition: width 2s;
-        }
-        .creamtcls:hover{
-            width:300px;
-        }
-        label{
+            color: #333;
+            border: none;
+            padding: 5px;
             font-size: larger;
         }
-        .creamtcls:focus{
-            background-color: aliceblue;
+
+        .creamtcls:hover {
+            width: 300px;
         }
-        input{
-            width:100px;
-            background:red;
-            transition:width 2s;
+
+        input[type="submit"] {
+            width: 100px;
+            background: #4CAF50;
+            transition: width 2s;
             font-size: larger;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
         }
-        input:hover{
-            width:300px;
+
+        input[type="submit"]:hover {
+            background: #45a049;
+            width: 300px;
         }
-        input:focus{
+
+        .creamtcls:focus {
             background-color: aliceblue;
         }
     </style>
@@ -73,9 +100,9 @@
             </tr>
             <tr>
                 <td>
-                        <label>
-                            Enter credit ammount:
-                        </label>
+                    <label for="creamt">
+                        Enter credit amount:
+                    </label>
                 </td>
                 <td>
                     <input type="text" class="creamtcls" name="creamt" id="creamt"/>
@@ -83,7 +110,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="submit" value="credit"/>
+                    <input type="submit" value="Credit"/>
                 </td>
             </tr>
         </table>

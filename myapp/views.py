@@ -1,19 +1,19 @@
-from email import message
+#from email import message
 from django.shortcuts import render
 from django.http import HttpResponse
 import datetime as dt
 from . import models
-import cv2
+#import cv2
 import numpy as np
-from tensorflow import keras
+#from tensorflow import keras
 # Create your views here.
-emotion_model = keras.models.load_model("C:/Users/NEELAM/OneDrive/Desktop/TransactionManager/ntransaction/Scripts/myproject/myapp/emotion_recognition_model.h5")
+#emotion_model = keras.models.load_model("C:/Users/NEELAM/OneDrive/Desktop/TransactionManager/ntransaction/Scripts/myproject/myapp/emotion_recognition_model.h5")
 
 # Define the emotions list corresponding to model output classes
-emotions = ["angry", "disgust", "fear", "happy", "sad", "surprise", "neutral"]
+#emotions = ["angry", "disgust", "fear", "happy", "sad", "surprise", "neutral"]
 
 # Function to detect and recognize emotions from frames
-def detect_emotion(frame):
+"""def detect_emotion(frame):
     # Convert grayscale frame to RGB (replicate the single channel three times)
     #faceDetect=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_GRAY2RGB)
@@ -54,7 +54,7 @@ def emotion(request):
 
     camera.release()
     cv2.destroyAllWindows()
-    return render(request,'defdel.html',{'emo':str(predicted_emotion)})
+    return render(request,'defdel.html',{'emo':str(predicted_emotion)})"""
 def index(request):
     return render(request,'login.html')
 def signup(request):
