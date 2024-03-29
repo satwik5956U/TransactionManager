@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .container {
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"],
+        input[type="checkbox"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input[type="checkbox"]+label {
+            cursor: pointer;
+            color: #333;
+        }
+
+        input[type="checkbox"]:checked+label {
+            color: #999;
+        }
+
+        input[type="checkbox"]:focus {
+            outline: none;
+        }
+
+        input[type="checkbox"]:focus-visible {
+            outline: 2px solid #45a049;
+        }
+    </style>
+    <script>
+        function showPassword() {
+            var x = document.getElementById("pwd");
+            if (x.type == "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Loginpage</h1>
+        <form id="mainForm" action="signindata">
+            <table>
+                <tr>
+                    <td><label>Enter bank account number:</label></td>
+                    <td><input type="text" name="baccno"/></td>
+                </tr>
+                <tr>
+                    <td><label>Enter password:</label></td>
+                    <td><input type="password" name="pass" id="pwd"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" onclick="showPassword()" /><label>Show Password</label></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="signup" form="signupForm"/></td>
+                    <td><input type="submit" value="signin"/></td>
+                </tr>               
+            </table>
+        </form>
+        <form id="signupForm" action="signup">
+            <!-- Signup form fields go here if needed -->
+        </form>
+    </div>
+</body>
+</html>
